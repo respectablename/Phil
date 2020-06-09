@@ -3,6 +3,12 @@
   <link rel="stylesheet" type="text/css" href="style.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
   <title>Phil - a free crossword maker</title>
+<script>
+function newPuzzle() {
+	var result = prompt("Enter desired size", DEFAULT_SIZE);
+	createNewPuzzle(result, result);
+}
+</script>
 </head>
 <body>
   <div id="header">
@@ -13,7 +19,7 @@
   </div>
 
   <div id="toolbar">
-    <button id="new-grid" type="button" data-tooltip="New puzzle" onclick="createNewPuzzle()">
+    <button id="new-grid" type="button" data-tooltip="New puzzle" onclick="newPuzzle()">
       <i class="fa fa-plus fa-fw" aria-hidden="true"></i>
     </button>
     <button id="open-JSON" type="button" data-tooltip="Open puzzle..." onmouseenter="showMenu(event)" onclick="openPuzzle()">

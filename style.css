@@ -16,7 +16,7 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica", "Roboto", "Droid Sans", "Arial", sans-serif;
-  width: 885px;
+  /*width: 885px;*/
   margin: 5px;
 }
 
@@ -171,7 +171,7 @@ kbd {
 
 #main {
   width: auto;
-  height: 550px;
+  /*height: 550px;*/
   float: left;
 }
 
