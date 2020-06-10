@@ -157,12 +157,12 @@ class PuzWriter {
     const down = json.clues.down;
     var clues = [];
     for (var i = 0; i < across.length; i++) {
-      const sp = across[i].split('. ');
-      clues.push([2 * parseInt(sp[0]), sp[1]]);
+      const sp = across[i].split('. ', 1);
+      clues.push([2 * parseInt(sp[0]), across[i].substring(sp[0].length+1,across[i].length) ]);
     }
     for (var i = 0; i < down.length; i++) {
-      const sp = down[i].split('. ');
-      clues.push([2 * parseInt(sp[0]) + 1, sp[1]]);
+      const sp = down[i].split('. ', 1);
+      clues.push([2 * parseInt(sp[0]) + 1, down[i].substring(sp[0].length+1,across[i].length)]);
     }
     clues.sort((a, b) => a[0] - b[0]);
     for (var i = 0; i < clues.length; i++) {
