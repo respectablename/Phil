@@ -680,7 +680,7 @@ function suppressEnterKey(e) {
 function generatePattern() {
   let title = xw.title;
   let author = xw.author;
-  createNewPuzzle();
+  createNewPuzzle(xw.rows, xw.cols);
   xw.title = title;
   xw.author = author;
 

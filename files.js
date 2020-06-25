@@ -237,6 +237,26 @@ class PuzWriter {
     this.computeChecksums();
     return new Uint8Array(this.buf);
   }
+
+  toIpuz(json)
+  {
+    let output = {};
+
+    this.ix = 0x34 + 2 * w * h;
+
+    output.origin = this.readString();
+    output.title = this.readString();
+    output.version = "http://ipuz.org/v2";
+    output.kind = "http://ipuz.org/crossword#1";
+
+    let w = this.buf[0x2c];
+    let h = this.buf[0x2d];
+    output.dimensions.width = w;
+    output.dimensions.height = h;
+
+
+    return output;
+  }
 }
 
 function openPuzzle() {
@@ -300,13 +320,17 @@ function openFile(e) {
 }
 
 function convertJSONToPuzzle(puz) {
-  createNewPuzzle();
-  if (puz.size.rows != DEFAULT_SIZE || puz.size.cols != DEFAULT_SIZE) {
+  createNewPuzzle(puz.size.rows, puz.size.cols);
+  /*if (puz.size.rows != DEFAULT_SIZE || puz.size.cols != DEFAULT_SIZE) {
     new Notification("Oops. Can only open 15 x 15 puzzles.", 10);
     return;
   }
   xw.rows = DEFAULT_SIZE;
   xw.cols = DEFAULT_SIZE;
+  */
+  xw.rows = puz.size.rows;
+  xw.cols = puz.size.cols;
+
   // Update puzzle title, author
   xw.title = puz.title || DEFAULT_TITLE;
   if (puz.title.slice(0,8).toUpperCase() == "NY TIMES") {
