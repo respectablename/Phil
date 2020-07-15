@@ -19,7 +19,8 @@ const keyboard = {
   "q":      81, "r": 82, "s": 83, "t": 84, "u": 85, "v": 86, "w": 87, "x": 88, "y": 89,
   "z":      90,
   "black":  190, ".": 190,
-  "delete": 8,
+  "backspace": 8,
+  "delete": 46,
   "enter":  13,
   "space":  32,
   "left":   37,
@@ -377,7 +378,7 @@ function keyboardHandler(e) {
   if (e.which == keyboard.enter) {
       current.direction = (current.direction == ACROSS) ? DOWN : ACROSS;
   }
-  if (e.which == keyboard.delete) {
+  if (e.which == keyboard.delete || e.which == keyboard.backspace) {
     e.preventDefault();
     let oldContent = xw.fill[current.row][current.col];
     xw.fill[current.row] = xw.fill[current.row].slice(0, current.col) + BLANK + xw.fill[current.row].slice(current.col + 1);
@@ -385,12 +386,15 @@ function keyboardHandler(e) {
         if (isSymmetrical) {
           xw.fill[symRow] = xw.fill[symRow].slice(0, symCol) + BLANK + xw.fill[symRow].slice(symCol + 1);
         }
-      } else { // move the cursor
-        e = new Event('keydown');
-        if (current.direction == ACROSS) {
-          e.which = keyboard.left;
-        } else {
-          e.which = keyboard.up;
+      } 
+      else { // move the cursor
+        if (e.which == keyboard.backspace) {
+          e = new Event('keydown');
+          if (current.direction == ACROSS) {
+            e.which = keyboard.left;
+          } else {
+            e.which = keyboard.up;
+          }
         }
       }
       isMutated = true;
