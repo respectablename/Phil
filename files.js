@@ -162,7 +162,7 @@ class PuzWriter {
     }
     for (var i = 0; i < down.length; i++) {
       const sp = down[i].split('. ', 1);
-      clues.push([2 * parseInt(sp[0]) + 1, down[i].substring(sp[0].length+1,across[i].length)]);
+      clues.push([2 * parseInt(sp[0]) + 1, down[i].substring(sp[0].length+1,down[i].length)]);
     }
     clues.sort((a, b) => a[0] - b[0]);
     for (var i = 0; i < clues.length; i++) {
