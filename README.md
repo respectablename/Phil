@@ -14,6 +14,7 @@ Phil helps you make crosswords, using client-side JavaScript.
 * Bolds suggested words that have a cross direction match
 * Allows 'delete' key as well as 'backspace' for deleting
 * Trims clues to remove &nbsp showing up on finished puzzles
+* The ability to create puzzles smaller or larger than 15x15
 
 ## Related repositories
 
