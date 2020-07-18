@@ -18,7 +18,7 @@ The Phil solving engine (in progress) uses the [Glucose](http://www.labri.fr/per
 
 To use <strong>this modified version</strong> of Phil:
 
-1. Go to [https://respectablename.entrydns.org/phil](https://respectablename.entrydns.org/phil).
+1. Go to [https://respectablename.entrydns.org/Phil](https://respectablename.entrydns.org/Phil).
 
 To run your own copy of Phil:
 
