@@ -8,6 +8,13 @@ Phil helps you make crosswords, using client-side JavaScript.
 * Print to PDF.
 * Create a New York Times submission in seconds.
 
+## Changes from the base repo
+
+* Fixes bug where clues get truncated if they contain periods ('.'s)
+* Bolds suggested words that have a cross direction match
+* Allows 'delete' key as well as 'backspace' for deleting
+* Trims clues to remove &nbsp showing up on finished puzzles
+
 ## Related repositories
 
 Phil uses [Font Awesome](https://github.com/FortAwesome/Font-Awesome/) icons and [jsPDF](https://github.com/MrRio/jsPDF/) (along with [jsPDF-AutoTable](https://github.com/simonbengtsson/jsPDF-AutoTable/)) for generating PDFs.
