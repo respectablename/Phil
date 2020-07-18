@@ -452,3 +452,7 @@ kbd {
   left: 2px;
   top: 0px;
 }
+
+.bold {
+  font-weight: bold;
+}
